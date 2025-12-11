@@ -175,7 +175,7 @@ class DeepSeekV3(nnx.Module):
                 q_da_sharding=q_da_spec,
                 anh_sharding=(None, ShardingAxisName.MLP_TENSOR, None),
                 kv_da_sharding=kv_da_spec,
-                nhd_sharding=(ShardingAxisName.MLP_TENSOR, None, None))
+                nhd_sharding=(ShardingAxisName.VOCAB, None, None))
 
         for i in range(first_k_dense_replace):
             block = TransformerBlock(
